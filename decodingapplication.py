@@ -2,8 +2,7 @@ import string
 import random
 N= 3
 ranEnd = ''.join(random.choices(string.ascii_letters, k=N))
-name = input("Enter Your Name: ")
-message = input(f"{name.capitalize()}, Enter your message: ")
+message = input("Enter your message: ")
 ranStart = ''.join(random.choices(string.ascii_letters, k=N))
 if(len(message) <= 2):
     updatedMsg = ranStart + message[1] + message[0] + ranEnd
