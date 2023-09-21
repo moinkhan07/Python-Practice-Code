@@ -1,12 +1,12 @@
-from PyPDF2 import PdfWriter
+import PyPDF2
 import os
 
-pdfFiles = [file for file in os.listdir("pdfFile") if file.endswith(".pdf")]
-mergedPdf = PdfWriter()
+pdfFiles = os.listdir("pdf")
+merger = PyPDF2.PdfMerger()
 
 for file in pdfFiles:
-    mergedPdf.append(file)
+    if file.endswith(".pdf"):
+        merger.append(file)
 
-mergedPdf.write("merged-pdf.pdf")
-mergedPdf.close()
+merger.write("merged-pdf.pdf")
 
